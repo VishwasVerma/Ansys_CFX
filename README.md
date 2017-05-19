@@ -1,2 +1,2 @@
 # Ansys_CFX
-CFX codes written in python
+CFX codes for simple geometry manipulation written in python
