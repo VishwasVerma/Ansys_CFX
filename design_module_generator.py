@@ -136,9 +136,9 @@ def make_cfx_file(datafile, inputfile, newfile):
     cordinate_data = getdata(datafile)
     input_data = getdata(inputfile) # input file contains data for z_location and theta rotation
     chord = 3.75 # chord of the balde is 3.75cm
-    x_centriod, y_centriod = findcentriod(cordinate_data)
     scaled_data = scale_cordinate(cordinate_data, chord)
-    translated_data = translate_geometry(cordinate_data, -1*x_centriod, -1*y_centriod)
+    x_centriod, y_centriod = findcentriod(scaled_data)
+    translated_data = translate_geometry(scaled_data, -1*x_centriod, -1*y_centriod)
     input_length = int(np.size(input_data)/2)
     for i in range(input_length):
         line = input_data[i]
